@@ -21,12 +21,20 @@
 		
 		
 	</head>
+    {% if dark_ui %}
+    <body class="dark-ui">
+    {% else %}
 	<body>
+    {% endif %}
         {% block body %}{% endblock %}
 
   		<div class="header-bar">
 			<div class="content-box">
+                {% if dark_ui %}
+				<img src="/media/images/kao_logo_2_1.png" alt="KAIST Orchestra" />
+                {% else %}
 				<img src="/media/images/kao_logo_1_1.png" alt="KAIST Orchestra" />
+                {% endif %}
 				<ul class="main-menu">
 					<a href="/"><li>Home</li></a>
 					<a href="/about_us"><li>About us</li></a>
@@ -39,19 +47,7 @@
 			</div>
 		</div>
 		
-        <div class="slider-frame">
-            <div class="slider-img" id="slider-img-1" style="background: #cccccc url(/media/images/full_bg_5_1.jpg) no-repeat center;">
-            </div>
-            <div class="slider-img" id="slider-img-2" style="background: #cccccc url(/media/images/full_bg_2_1.jpg) no-repeat center;">
-            </div>
-            <div class="slider-img" id="slider-img-3" style="background: #cccccc url(/media/images/full_bg_1_1.jpg) no-repeat center;">
-            </div>
-            <div class="content-box">
-                <div class="slider-text-box">
-                    {{ slider.content | safe }}
-                </div>
-            </div>
-        </div>
+        {% block slider %}{% endblock %}
 		
 		<div class="content-frame">
 			<div class="content-box">

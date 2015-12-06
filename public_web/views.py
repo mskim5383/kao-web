@@ -26,27 +26,15 @@ def home(request):
                                                     'sub_text': sub_text})
 
 def about_us(request):
-    try:
-        slider = WebContent.objects.filter(type='slider')[0]
-    except:
-        slider = None
-    return render(request, 'public_web/about_us.html', {'slider': slider})
+    return render(request, 'public_web/about_us.html', {'dark_ui': True})
 
 def contact_us(request):
-    try:
-        slider = WebContent.objects.filter(type='slider')[0]
-    except:
-        slider = None
-    return render(request, 'public_web/contact_us.html', {'slider': slider})
+    return render(request, 'public_web/contact_us.html', {'dark_ui': True})
 
 def faq(request):
     try:
         web_content = WebContent.objects.filter(type='faq')[0]
     except:
         web_content = None
-    try:
-        slider = WebContent.objects.filter(type='slider')[0]
-    except:
-        slider = None
-    return render(request, 'public_web/faq.html', {'slider': slider,
+    return render(request, 'public_web/faq.html', {'dark_ui': True,
                                                    'faq': web_content})

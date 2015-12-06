@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 
+{% block slider %}
+    <div class="slider-frame">
+        <div class="slider-img" id="slider-img-1" style="background: #cccccc url(/media/images/full_bg_5_1.jpg) no-repeat center;">
+        </div>
+        <div class="slider-img" id="slider-img-2" style="background: #cccccc url(/media/images/full_bg_2_1.jpg) no-repeat center;">
+        </div>
+        <div class="slider-img" id="slider-img-3" style="background: #cccccc url(/media/images/full_bg_1_1.jpg) no-repeat center;">
+        </div>
+        <div class="content-box">
+            <div class="slider-text-box">
+                {{ slider.content | safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
     <div class="main-box main-content">
         {{ main_text.content | safe }}
