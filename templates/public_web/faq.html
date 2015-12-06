@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="main-box">
+        <h1>자주 묻는 질문</h1>
+        {{ faq.content | safe }}
+    </div>
+{% endblock %}

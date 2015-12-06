@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="main-box main-content">
+        {{ main_text.content | safe }}
+    </div>
+    <div class="sub-box main-content">
+        {{ sub_text.content | safe }}
+    </div>
+{% endblock %}
